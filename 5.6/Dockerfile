@@ -7,5 +7,5 @@ RUN curl --location --output /usr/local/bin/composer https://getcomposer.org/com
 
 RUN echo "date.timezone = UTC" >> /usr/local/etc/php/conf.d/test.ini
 
-RUN pecl install xdebug
+RUN pecl install xdebug-2.5.5
 RUN docker-php-ext-enable xdebug
