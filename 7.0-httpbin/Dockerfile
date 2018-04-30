@@ -1,8 +1,7 @@
 FROM php:7.0-cli
 
 RUN apt-get update
-RUN apt-get install -yyy git unzip curl python-pip gunicorn
-RUN pip install httpbin
+RUN apt-get install -yyy git unzip curl python-httpbin gunicorn
 
 RUN curl --location --output /usr/local/bin/phpunit https://phar.phpunit.de/phpunit.phar && chmod +x /usr/local/bin/phpunit
 RUN curl --location --output /usr/local/bin/composer https://getcomposer.org/composer.phar && chmod +x /usr/local/bin/composer
