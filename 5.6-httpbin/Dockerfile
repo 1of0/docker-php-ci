@@ -1,7 +1,9 @@
 FROM php:5.6-cli
 
-RUN apt-get update
-RUN apt-get install -yyy git unzip curl python-httpbin gunicorn
+RUN apt update
+RUN apt install -yyy git unzip curl libffi-dev python-pip python-dev gunicorn
+RUN pip install --upgrade cffi
+RUN pip install httpbin
 
 RUN curl --location --output /usr/local/bin/phpunit https://phar.phpunit.de/phpunit.phar && chmod +x /usr/local/bin/phpunit
 RUN curl --location --output /usr/local/bin/composer https://getcomposer.org/composer.phar && chmod +x /usr/local/bin/composer
